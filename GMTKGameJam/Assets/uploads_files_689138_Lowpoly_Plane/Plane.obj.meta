@@ -3,7 +3,112 @@ guid: 97164e6648ad21a40a44ae7fe17c27cd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_left_Cube1Mat
+    second: {fileID: 2100000, guid: e054c27cca401b3448df0a38696f18dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_left_Cube_12Mat
+    second: {fileID: 2100000, guid: 0831de49adb8f57489b78abc4dec4409, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_left_Cube_22Mat
+    second: {fileID: 2100000, guid: 787f390ae74a971418f9ec25238492fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_right_CubeMat
+    second: {fileID: 2100000, guid: 0c6ee6bb22379c8499cdce5fdceba035, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_right_Cube_11Mat
+    second: {fileID: 2100000, guid: 5d89087d71646da44880f37e431b7f8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Air_motor_right_Cube_21Mat
+    second: {fileID: 2100000, guid: 3af2a94d760338443bef9f2194206982, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Body_Cube2Mat
+    second: {fileID: 2100000, guid: 1bc0934227f32fb4f8dd6e2462dee8ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Propeller_ConeMat
+    second: {fileID: 2100000, guid: d1514fef1a1fc9a408f8a3195082614a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Propeller_Cone_1Mat
+    second: {fileID: 2100000, guid: 5318c75a400e69544b148b5587d8856e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Propeller_Cube_0Mat
+    second: {fileID: 2100000, guid: 19af48c316be1e94c8672df3e12b3501, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Propeller_Cube_1Mat
+    second: {fileID: 2100000, guid: 62c94b19f6287f74fbf35e25e5252cfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Propeller_Cube_2Mat
+    second: {fileID: 2100000, guid: d97675810ab1ac6498b9a0c4606ae232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel2_Cylinder_12Mat
+    second: {fileID: 2100000, guid: 285027f0cfb2f60418203a7c74845cd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel2_Wheel3Mat
+    second: {fileID: 2100000, guid: 38f603deb6d9de543a3810dec8b1f02c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel2_WheelCarcas2Mat
+    second: {fileID: 2100000, guid: f3dab70c491b76040a56b6035c0b6f79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_1_Cylinder_11Mat
+    second: {fileID: 2100000, guid: 33dfb03a4435cef40a7f70d4b1037db2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_1_Wheel1Mat
+    second: {fileID: 2100000, guid: eb9a193acd043de49a7b5dbcf4a8cec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_1_WheelCarcas1Mat
+    second: {fileID: 2100000, guid: 0b01b403967006e44a10986878246ee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_Back_Cylinder_1Mat
+    second: {fileID: 2100000, guid: 51d64802accbaa744b87c508abd0b338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_Back_WheelCarcasMat
+    second: {fileID: 2100000, guid: 9f57e7d0b5416894bbd7c802533afe88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane_Wheel_Back_WheelMat
+    second: {fileID: 2100000, guid: 9b67cacda38e1de43be437ba9e57e4e6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
