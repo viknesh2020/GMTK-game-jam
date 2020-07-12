@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class ObjectPooler
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
+
+    public UIManager uIManager;
 
     [Header("Obstracle Setting")]
     // Object Pooling of obstracles
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
     public PlaneController playerController;
     public Vector3 initialPlayerPos;
 
+    public  Image healthBar;
+    public static float healthValue;
+
     void Start()
     {
         initialPlayerPos = playerController.transform.position;
@@ -71,12 +77,17 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(SpawnItem());
             }
             PlayerSpeedControl();
+            HealthControl();
+
+
+            
         }
     }
     public void Initialize()
     {
         time = 0f;
         gameSpeed = 0f;
+        healthValue = 1f;
 
         startGame = false;
         //  playerController.animator.SetBool(1, false);
@@ -98,17 +109,18 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(itemSpawnTime);
 
-        int randomValue = Random.Range(0, 4);
+        int randomValue = Random.Range(0, objectsToPool.Count);
         itemName = new StringBuilder("Item", 6);
         itemName.Append(randomValue);
-        var newSpawnPoint = spawnPoint.position + new Vector3(Random.Range(-15f, 15f), Random.Range(-9f, 9f), 0);
-
+        var newSpawnPoint = spawnPoint.position + new Vector3(Random.Range(-30f, 30f), Random.Range(-9f, 9f), 0);
 
         GameObject pickupitemToSpawn = GetPooledObject(itemName.ToString());
-        pickupitemToSpawn.transform.position = newSpawnPoint;
-        pickupitemToSpawn.SetActive(true);
-        pickupSpawnFlag = true;
-
+        if (pickupitemToSpawn != null)
+        {
+            pickupitemToSpawn.transform.position = newSpawnPoint;
+            pickupitemToSpawn.SetActive(true);
+        }     pickupSpawnFlag = true;
+        
     }
 
     public GameObject GetPooledObject(string tag)
@@ -130,6 +142,7 @@ public class GameManager : MonoBehaviour
                     pooledObjects.Add(gO);
                     return gO;
                 }
+                
             }
         }
         return null;
@@ -161,8 +174,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0;
+        uIManager.GameOverScreen();
         Debug.Log("Game Over");
+    }
+
+    public void HealthControl()
+    {
+        healthBar.fillAmount = healthValue;
+        if (healthValue <= 0)
+        {
+            GameOver();
+        }
     }
 
 }

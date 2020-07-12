@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject startMenu;
     public GameObject pauseMenu;
     public GameObject hudMenu;
+    public GameObject gameOverMenu;
     private bool pause;
     private bool play;
     private int score;
@@ -34,7 +35,10 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-       if(!File.Exists(scoreFilePath)){
+        score = 0;
+        currentScore.text = score.ToString();
+
+        if (!File.Exists(scoreFilePath)){
         CreateFilePath();
        } else {
          highScore = GetHighScore();
@@ -58,13 +62,15 @@ public class UIManager : MonoBehaviour
     }
 
     public void Score(){
-        score = Mathf.RoundToInt(scoreMultiplier * Time.time);
+
+        score += Mathf.RoundToInt(scoreMultiplier * Time.deltaTime);
         currentScore.text = score.ToString();
     }
 
     public void Play(){
         Time.timeScale = 1;
         startMenu.SetActive(false);
+        GameManager.Instance.startGame = true;
         play = true;
         hudMenu.SetActive(true);
     }
@@ -85,7 +91,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void Restart(){
-        score = 0;
+
+       
         SetHighScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }
@@ -116,6 +123,12 @@ public class UIManager : MonoBehaviour
         using(FileStream fs = File.Create(scoreFilePath)){
             Debug.Log(fs);
         }
+    }
+
+    public void GameOverScreen()
+    {
+        Time.timeScale = 0;
+        gameOverMenu.SetActive(true);
     }
 }
 [Serializable]

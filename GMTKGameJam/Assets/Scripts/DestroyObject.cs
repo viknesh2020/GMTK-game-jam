@@ -18,6 +18,6 @@ public class DestroyObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.parent.gameObject.SetActive(false);
+        other.transform.gameObject.SetActive(false);
     }
 }

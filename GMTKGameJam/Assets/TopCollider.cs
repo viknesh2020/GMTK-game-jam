@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TopCollider : MonoBehaviour
 {
+
+    public AudioSource audioSource;
+    public AudioClip planeCrash;
+
     public PlaneController playerController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerController = FindObjectOfType<PlaneController>();
     }
 
     // Update is called once per frame
@@ -22,6 +26,7 @@ public class TopCollider : MonoBehaviour
         if(other.tag == "Player")
         {
             playerController.stopInputControl = true;
+            audioSource.PlayOneShot(planeCrash);
         }
     }
 }

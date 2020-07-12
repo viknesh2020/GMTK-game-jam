@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GroundCollider : MonoBehaviour
 {
+
+    public AudioSource audioSource;
+    public AudioClip planeCrash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,7 @@ public class GroundCollider : MonoBehaviour
         if(other.tag == "Player")
         {
             GameManager.Instance.GameOver();
+            audioSource.PlayOneShot(planeCrash);
         }
     }
 }
